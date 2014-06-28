@@ -1,0 +1,6 @@
+{
+    "require": {
+        "silex/silex": "~1.2",
+        "saxulum/saxulum-doctrine-mongodb-provider": "dev-master"
+    }
+}
