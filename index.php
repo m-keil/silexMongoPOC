@@ -26,7 +26,7 @@ $app->get('/start', function() use ($app){
 
 
 // create
-$app->get('/create/story/{name}', function ($name) use ($app) {
+$app->post('/create/story/{name}', function ($name) use ($app) {
    $document = array('name' => $name);
 
    $result = $app['mongodb']
@@ -68,7 +68,7 @@ $app->get('/findall/stories/', function () use ($app) {
 
 
 // update
-$app->get('/update/story/{oldName}/{newName}', function ($oldName, $newName) use ($app) {
+$app->put('/update/story/{oldName}/{newName}', function ($oldName, $newName) use ($app) {
 
     $result = $app['mongodb']
         ->selectDatabase('stories')
@@ -82,7 +82,7 @@ $app->get('/update/story/{oldName}/{newName}', function ($oldName, $newName) use
 
 
 // remove
-$app->get('/remove/story/{name}', function ($name) use ($app) {
+$app->delete('/remove/story/{name}', function ($name) use ($app) {
 
     $result = $app['mongodb']
         ->selectDatabase('stories')
